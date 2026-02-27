@@ -1,0 +1,203 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior:smooth;
+}
+
+/* DIFFERENT BACKGROUND FOR EACH PAGE */
+.home-bg{
+    background:linear-gradient(135deg,#487bbd,#6929a8);
+}
+
+.about-bg{
+    background:linear-gradient(135deg,#ff758c,#b21f5c);
+}
+
+.services-bg{
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+}
+
+.contact-bg{
+    background:linear-gradient(135deg,#5dae00,#97894d);
+    color:#111;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:0.4s ease;
+    z-index:1000;
+    background:transparent;
+}
+
+/* Attractive navbar on scroll */
+nav.scrolled{
+    background:linear-gradient(90deg,#141e30,#243b55);
+    box-shadow:0 6px 25px rgba(0,0,0,0.4);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:white;
+}
+
+/* NAV LINKS */
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#eee;
+    font-size:18px;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+/* Hover glow effect */
+.nav-links a:hover{
+    color:#ffffff;
+    transform:translateY(-2px);
+}
+
+/* Animated underline */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:3px;
+    background:#ffffff;
+    left:0;
+    bottom:-6px;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+/* SECTIONS */
+.section{
+    min-height:100vh;
+    padding:120px 60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.section h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.section p{
+    font-size:20px;
+    opacity:0.9;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:25px;
+    padding:14px 35px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#333;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* GLASS CARDS */
+.cards, .services{
+    display:flex;
+    gap:30px;
+    margin-top:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card, .service-box{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    width:260px;
+    transition:0.4s;
+    box-shadow:0 8px 30px rgba(0,0,0,0.2);
+}
+
+.card:hover, .service-box:hover{
+    transform:translateY(-12px) scale(1.05);
+    background:rgba(255,255,255,0.25);
+}
+
+/* MOBILE MENU */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#111;
+        width:200px;
+        flex-direction:column;
+        display:none;
+        text-align:center;
+        padding:20px 0;
+        border-radius:10px 0 0 10px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        margin:15px 0;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .section h1{
+        font-size:32px;
+    }
+}
